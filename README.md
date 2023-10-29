@@ -1,24 +1,13 @@
 # gamespace
 
-Xvfb
 
 ```
-sudo apt install -y xvfb x11-apps x11vnc xterm novnc granatier
-Xvfb :99 -screen 0 1024x768x24 &
+sudo apt install -y xvfb x11-apps x11vnc xterm dbus-x11 granatier
+sudo Xvfb :99 -screen 0 640x480x24 &
 export DISPLAY=:99
 x11vnc -display :99 -forever &
-novnc_proxy --vnc localhost:5900 &
+git clone https://github.com/novnc/noVNC.git
+cd noVNC
+./utils/novnc_proxy --vnc localhost:5900 &
 /usr/games/granatier
-```
-
-x11-apps
-
-```
-sudo apt install -y x11-apps
-```
-
-x11vnc
-
-```
-sudo apt install -y x11vnc
 ```
