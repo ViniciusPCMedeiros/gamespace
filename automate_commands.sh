@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# Update the system
+sudo apt update
 # Install required packages
 sudo apt install -y xvfb x11-apps x11vnc xterm dbus-x11 granatier
 
